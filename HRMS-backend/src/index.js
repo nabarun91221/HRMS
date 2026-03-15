@@ -43,7 +43,7 @@ nextApp.prepare().then(() =>
 
   App.use(
     cors({
-      origin: "http://localhost:8080",
+      origin: "http://140.245.205.82:8080",
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       credentials: true,
     }),
