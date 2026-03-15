@@ -1,0 +1,3 @@
+{
+  "/(protected)/admin/dashboard/employee/list/page": "app/(protected)/admin/dashboard/employee/list/page.js"
+}

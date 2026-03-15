@@ -1,0 +1,60 @@
+[00:00:01.537] Server  LOG     ✓ Ready in 1245ms
+[00:00:08.002] Server  LOG     proxy "/"
+[00:00:08.024] Server  LOG     proxy "/auth/login"
+[00:00:11.029] Server  LOG     ○ Compiling /auth/login ...
+[00:00:13.599] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:23.967] Server  LOG     ✓ Compiled in 2.3s
+[00:01:24.006] Server  LOG     proxy "/auth/login"
+[00:01:24.362] Server  LOG     proxy "/logo.jpg"
+[00:01:24.386] Server  LOG     proxy "/auth/login"
+[00:01:27.122] Server  LOG     proxy "/auth/login"
+[00:01:27.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:27.787] Server  LOG     proxy "/logo.jpg"
+[00:01:27.819] Server  LOG     proxy "/auth/login"
+[00:01:44.480] Server  LOG     ✓ Finished filesystem cache database compaction in 11.8s
+[00:02:13.747] Server  LOG     proxy "/auth/login"
+[00:02:14.150] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:14.260] Server  LOG     proxy "/logo.jpg"
+[00:02:14.288] Server  LOG     proxy "/auth/login"
+[00:02:33.907] Server  LOG     proxy "/logo.jpg"
+[00:02:33.928] Server  LOG     proxy "/auth/login"
+[00:03:59.992] Server  LOG     ✓ Compiled in 485ms
+[00:04:00.183] Server  LOG     proxy "/logo.jpg"
+[00:04:00.236] Server  LOG     proxy "/auth/login"
+[00:04:09.026] Server  LOG     proxy "/auth/login"
+[00:04:09.292] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:09.471] Server  LOG     proxy "/logo.jpg"
+[00:04:09.509] Server  LOG     proxy "/auth/login"
+[00:04:50.801] Server  LOG     proxy "/logo.jpg"
+[00:04:50.822] Server  LOG     proxy "/auth/login"
+[00:04:51.064] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:51.155] Server  LOG     proxy "/logo.jpg"
+[00:04:51.173] Server  LOG     proxy "/auth/login"
+[00:05:05.126] Server  LOG     proxy "/logo.jpg"
+[00:05:05.136] Server  LOG     proxy "/auth/login"
+[00:05:05.286] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:05.337] Server  LOG     proxy "/logo.jpg"
+[00:05:05.351] Server  LOG     proxy "/auth/login"
+[00:08:23.104] Server  LOG     ✓ Compiled in 80ms
+[00:08:28.580] Server  LOG     proxy "/auth/login"
+[00:08:29.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:29.432] Browser WARN    Image with src "http://localhost:14547/logo.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:08:29.432] Browser WARN    Image with src "/logo.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:09:32.515] Server  LOG     ✓ Compiled in 739ms
+[00:09:34.286] Server  LOG     ✓ Compiled in 95ms
+[00:10:00.143] Server  LOG     ✓ Compiled in 2.3s
+[00:10:25.165] Server  LOG     ✓ Compiled in 326ms
+[00:10:37.367] Server  LOG     ✓ Compiled in 106ms
+[00:10:45.952] Server  LOG     ✓ Compiled in 83ms
+[00:10:51.650] Server  LOG     proxy "/auth/login"
+[00:10:52.639] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:53.008] Browser WARN    Image with src "http://localhost:14547/logo.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:10:53.008] Browser WARN    Image with src "/logo.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:10:57.962] Server  LOG     ✓ Compiled in 370ms
+[00:13:07.822] Server  LOG     proxy "/auth/login"
+[00:13:08.250] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:08.483] Browser WARN    Image with src "http://localhost:14547/logo.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:13:08.483] Browser WARN    Image with src "/logo.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

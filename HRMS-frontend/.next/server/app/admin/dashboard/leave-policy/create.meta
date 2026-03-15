@@ -1,0 +1,19 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(protected)/layout,_N_T_/(protected)/admin/layout,_N_T_/(protected)/admin/dashboard/layout,_N_T_/(protected)/admin/dashboard/leave-policy/layout,_N_T_/(protected)/admin/dashboard/leave-policy/create/layout,_N_T_/(protected)/admin/dashboard/leave-policy/create/page,_N_T_/admin/dashboard/leave-policy/create"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KHByb3RlY3RlZCk/admin/dashboard/leave-policy/create/__PAGE__",
+    "/!KHByb3RlY3RlZCk/admin/dashboard/leave-policy/create",
+    "/!KHByb3RlY3RlZCk/admin/dashboard/leave-policy",
+    "/!KHByb3RlY3RlZCk/admin/dashboard",
+    "/!KHByb3RlY3RlZCk/admin",
+    "/!KHByb3RlY3RlZCk",
+    "/_index",
+    "/_head"
+  ]
+}

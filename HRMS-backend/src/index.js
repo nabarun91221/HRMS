@@ -30,7 +30,7 @@ const dev = false;
 // tell Next where the frontend project is
 const nextApp = next({
   dev,
-  dir: "../hrms-frontend",
+  dir: "../HRMS-frontend",
 });
 
 const handle = nextApp.getRequestHandler();
