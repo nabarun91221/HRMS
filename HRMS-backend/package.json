@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch src/index.js",
     "seed:office": "node src/shared/seeds/office.seed.js",
-    "build:frontend": "cd ../hrms-frontend && npm install && npm run build",
+    "build:frontend": "cd ../HRMS-frontend && npm install && npm run build",
     "start": "node src/index.js",
     "prod": "npm run build:frontend && npm start"
   },
