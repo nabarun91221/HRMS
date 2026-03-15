@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "Cli/contents/createPage.js",
     ".next/dev/types/**/*.ts"
-, "next.config.ts"  ],
+  ],
   "exclude": ["node_modules"]
 }
