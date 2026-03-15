@@ -1,7 +1,6 @@
 import "./jobs/dayEndAttendance.js";
 
 import express from "express";
-import next from "next";
 import path from "path";
 
 import AttendanceRouter from "./modules/attendance/routes/attendance.route.js";
@@ -22,63 +21,51 @@ import connectMongoDb from "./configs/mongoDb.config.js";
 
 configDotenv();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 const baseUrl = "/api";
 
-const dev = false;
 
-// tell Next where the frontend project is
-const nextApp = next({
-  dev,
-  dir: "../HRMS-frontend",
+const App = express();
+
+App.use(express.static("./../public/image"));
+
+App.use(
+  cors({
+    origin: "https://hrms-two-silk.vercel.app/",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  }),
+);
+
+App.use(express.urlencoded({ extended: true }));
+App.use(express.json());
+App.use(cookieParser());
+
+// API routes
+App.use(baseUrl, AuthRouter);
+App.use(baseUrl, UserRouter);
+App.use(baseUrl, DepartmentRouter);
+App.use(baseUrl, DesignationRouter);
+App.use(baseUrl, EmployeeRouter);
+App.use(baseUrl, FileRouter);
+App.use(baseUrl, OtpRouter);
+App.use(baseUrl, AttendanceRouter);
+App.use(baseUrl, LeaveRouter);
+App.use(baseUrl, PayrollRouter);
+
+// let Next handle all frontend routes
+App.use((req, res) =>
+{
+  return handle(req, res);
 });
 
-const handle = nextApp.getRequestHandler();
-
-nextApp.prepare().then(() =>
+App.listen(PORT, async () =>
 {
-  const App = express();
-
-  App.use(express.static("./../public/image"));
-
-  App.use(
-    cors({
-      origin: "http://localhost:8000",
-      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-      allowedHeaders: ["Content-Type", "Authorization"],
-      credentials: true,
-    }),
-  );
-
-  App.use(express.urlencoded({ extended: true }));
-  App.use(express.json());
-  App.use(cookieParser());
-
-  // API routes
-  App.use(baseUrl, AuthRouter);
-  App.use(baseUrl, UserRouter);
-  App.use(baseUrl, DepartmentRouter);
-  App.use(baseUrl, DesignationRouter);
-  App.use(baseUrl, EmployeeRouter);
-  App.use(baseUrl, FileRouter);
-  App.use(baseUrl, OtpRouter);
-  App.use(baseUrl, AttendanceRouter);
-  App.use(baseUrl, LeaveRouter);
-  App.use(baseUrl, PayrollRouter);
-
-  // let Next handle all frontend routes
-  App.use((req, res) =>
-  {
-    return handle(req, res);
-  });
-
-  App.listen(PORT, async () =>
-  {
-    try {
-      await connectMongoDb();
-      console.log(`Server running at http://localhost:${PORT}`);
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  try {
+    await connectMongoDb();
+    console.log(`Server running at http://localhost:${PORT}`);
+  } catch (error) {
+    console.log(error);
+  }
 });
