@@ -54,11 +54,6 @@ App.use(baseUrl, AttendanceRouter);
 App.use(baseUrl, LeaveRouter);
 App.use(baseUrl, PayrollRouter);
 
-// let Next handle all frontend routes
-App.use((req, res) =>
-{
-  return handle(req, res);
-});
 
 App.listen(PORT, async () =>
 {

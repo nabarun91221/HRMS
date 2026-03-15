@@ -10,7 +10,6 @@ const s3Domain = process.env.NEXT_PUBLIC_S3_DOMAIN!;
 const s3Url = process.env.NEXT_PUBLIC_S3_URL!;
 
 const nextConfig: NextConfig = {
-  output: "export"
   // compiler: {
   //   removeConsole: process.env.NODE_ENV === 'production',
   // },
