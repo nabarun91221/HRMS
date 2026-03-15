@@ -3,6 +3,7 @@ import { ROUTES } from "./lib/routes";
 import { UserRoleEnum } from "./modules/auth/schema";
 
 export function proxy(request: NextRequest) {
+  console.log(request.cookies.get(process.env.NEXT_PUBLIC_TOKEN_NAME!));
   const hasToken = !!request.cookies.get(process.env.NEXT_PUBLIC_TOKEN_NAME!);
 
   const role = request.cookies.get("userRole")?.value;
