@@ -1,0 +1,3 @@
+module.exports=[83043,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(54689);a.n(d("[project]/HRMS-frontend/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},43092,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(54689);a.n(d("[project]/HRMS-frontend/node_modules/next/dist/client/components/builtin/global-error.js"))},29570,a=>{"use strict";a.i(83043);var b=a.i(43092);a.n(b)}];
+
+//# sourceMappingURL=f9463_next_dist_client_components_builtin_global-error_be38a213.js.map

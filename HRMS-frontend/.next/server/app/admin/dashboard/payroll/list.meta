@@ -1,0 +1,19 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(protected)/layout,_N_T_/(protected)/admin/layout,_N_T_/(protected)/admin/dashboard/layout,_N_T_/(protected)/admin/dashboard/payroll/layout,_N_T_/(protected)/admin/dashboard/payroll/list/layout,_N_T_/(protected)/admin/dashboard/payroll/list/page,_N_T_/admin/dashboard/payroll/list"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KHByb3RlY3RlZCk/admin/dashboard/payroll/list/__PAGE__",
+    "/!KHByb3RlY3RlZCk/admin/dashboard/payroll/list",
+    "/!KHByb3RlY3RlZCk/admin/dashboard/payroll",
+    "/!KHByb3RlY3RlZCk/admin/dashboard",
+    "/!KHByb3RlY3RlZCk/admin",
+    "/!KHByb3RlY3RlZCk",
+    "/_index",
+    "/_head"
+  ]
+}

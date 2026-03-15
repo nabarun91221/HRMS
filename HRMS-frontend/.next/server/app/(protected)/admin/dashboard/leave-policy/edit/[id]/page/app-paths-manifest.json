@@ -1,0 +1,3 @@
+{
+  "/(protected)/admin/dashboard/leave-policy/edit/[id]/page": "app/(protected)/admin/dashboard/leave-policy/edit/[id]/page.js"
+}

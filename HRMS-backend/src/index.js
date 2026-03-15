@@ -66,7 +66,7 @@ nextApp.prepare().then(() =>
   App.use(baseUrl, PayrollRouter);
 
   // let Next handle all frontend routes
-  App.all("*", (req, res) =>
+  App.use((req, res) =>
   {
     return handle(req, res);
   });

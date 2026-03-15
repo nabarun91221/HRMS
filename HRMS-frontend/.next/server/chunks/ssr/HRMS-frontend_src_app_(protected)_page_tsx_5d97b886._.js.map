@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../HRMS-frontend/src/app/%28protected%29/page.tsx"],"sourcesContent":["'use client';\n\nconst Page = () => {\n  return <></>;\n};\n\nexport default Page;\n"],"names":[],"mappings":"yEAEa,IACJ,CAAA,EAAA,EAAA,GAAA,EAAA,EAAA,QAAA,CAAA,CAAA"}

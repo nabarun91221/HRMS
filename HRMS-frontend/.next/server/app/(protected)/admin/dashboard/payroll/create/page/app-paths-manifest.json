@@ -1,0 +1,3 @@
+{
+  "/(protected)/admin/dashboard/payroll/create/page": "app/(protected)/admin/dashboard/payroll/create/page.js"
+}
