@@ -38,7 +38,11 @@ class PayrollController
         .session(session);
 
       if (!revision) {
-        throw new Error("No active salary revision found");
+        const dbRevision = await SalaryRevision.findOne({
+          employeeId,
+          isActive: true,
+        })
+        throw new Error(`No active salary revision found, salary can't be generated before ${new Date(dbRevision.effectiveFrom)}`);
       }
 
       const { grossSalary, totalDeductions, netSalary } = calculateSalary(
