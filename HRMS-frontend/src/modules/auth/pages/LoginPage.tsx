@@ -25,7 +25,9 @@ import { Spinner } from "@/components/ui/spinner";
 import { useLogin } from "@/modules/auth/hooks";
 import { emailSchema, stringSchema } from "@/utils/zod";
 import { toast } from "sonner";
+import { useState } from "react";
 import next from "next";
+import DemoCredentialsPopup from "@/components/demoCredentialPopup";
 
 const formSchema = z.object({
   email: emailSchema,
@@ -35,6 +37,9 @@ const formSchema = z.object({
 type LoginSchemaType = z.infer<typeof formSchema>;
 
 export default function LoginPage() {
+  const [openDemo, setOpenDemo] = useState(false);
+
+
   const { mutate: loginStudent, isPending } = useLogin();
   const { setLoggedInUser } = useAuth();
   const form = useForm<LoginSchemaType>({
@@ -171,6 +176,10 @@ export default function LoginPage() {
           </div> */}
         </CardContent>
       </Card>
+      <Button onClick={() => setOpenDemo(true)} className="fixed bottom-6 left-1/2 -translate-x-1/2 rounded-full  bg-black text-white py-2.5 text-sm font-medium hover:bg-gray-900 transition ">
+        Show Demo Credentials
+      </Button>
+      {openDemo && <DemoCredentialsPopup setOpen={setOpenDemo} />}
     </div>
   );
 }
