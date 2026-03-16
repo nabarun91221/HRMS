@@ -55,6 +55,10 @@ class PayrollController
           `Salary can't be generated for this employee (${dbRevision.employeeId.personalInfo.firstName} #${dbRevision.employeeId.employeeCode}) before ${formattedDate}, employee does't spend 1 month in the company yet`
         );
       }
+      const { grossSalary, totalDeductions, netSalary } = calculateSalary(
+        revision.earnings,
+        revision.deductions,
+      );
 
       const payroll = await Payroll.create(
         [
