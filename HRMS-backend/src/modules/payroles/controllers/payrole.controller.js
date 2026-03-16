@@ -4,9 +4,12 @@ import Employee from "../../employees/models/employee.model.js";
 import Payroll from "../models/payrole.model.js";
 import SalaryRevision from "../models/salaryRevision.model.js";
 import calculateSalary from "../utils/calculateSalary.util.js";
-class PayrollController {
+import validatePayrollCreation from "../utils/payrollValidation.util.js";
+class PayrollController
+{
   //GENERATE PAYROLL (FROM SALARY REVISION)
-  async generatePayroll(req, res) {
+  async generatePayroll(req, res)
+  {
     const session = await mongoose.startSession();
     session.startTransaction();
 
@@ -79,7 +82,8 @@ class PayrollController {
   }
 
   // RECALCULATE PAYROLL(ONLY DRAFT)
-  async recalculatePayroll(req, res) {
+  async recalculatePayroll(req, res)
+  {
     try {
       const { payrollId } = req.params;
 
@@ -115,7 +119,8 @@ class PayrollController {
   }
 
   //APPROVE PAYROLL
-  async approvePayroll(req, res) {
+  async approvePayroll(req, res)
+  {
     const session = await mongoose.startSession();
     session.startTransaction();
 
@@ -155,7 +160,8 @@ class PayrollController {
   }
 
   //LOCK PAYROLL (FINAL STEP)
-  async lockPayroll(req, res) {
+  async lockPayroll(req, res)
+  {
     try {
       const { payrollId } = req.params;
 
@@ -184,7 +190,8 @@ class PayrollController {
 
   //for admins
 
-  async getAllPayroll(req, res) {
+  async getAllPayroll(req, res)
+  {
     try {
       let { sort } = req.query;
 
@@ -300,7 +307,8 @@ class PayrollController {
     }
   }
   //add earnings
-  addEarnings = async (req, res) => {
+  addEarnings = async (req, res) =>
+  {
     try {
       const { payrollId } = req.params;
       const newEarningPayload = req.body;
@@ -342,7 +350,8 @@ class PayrollController {
     }
   };
   //add deductions
-  addDeductions = async (req, res) => {
+  addDeductions = async (req, res) =>
+  {
     try {
       const { payrollId } = req.params;
       const newDeductionPayload = req.body;
@@ -385,7 +394,8 @@ class PayrollController {
   };
 
   //GET PAYROLL BY EMPLOYEE + MONTH
-  async getPayrollByMonthYear(req, res) {
+  async getPayrollByMonthYear(req, res)
+  {
     try {
       const { employeeId, month, year } = req.query;
 
@@ -405,7 +415,8 @@ class PayrollController {
     }
   }
   //GET PAYROLL for each EMPLOYEE
-  async getAllPayrollPerUser(req, res) {
+  async getAllPayrollPerUser(req, res)
+  {
     const userId = req.user.sub;
     let { sort } = req.query;
 
@@ -441,7 +452,8 @@ class PayrollController {
     }
   }
   // download payroll EMPLOYEE
-  downloadPayrollPDF = async (req, res) => {
+  downloadPayrollPDF = async (req, res) =>
+  {
     try {
       const { payrollId } = req.params;
       const employee = await Employee.findOne({ userId: req.user.sub });

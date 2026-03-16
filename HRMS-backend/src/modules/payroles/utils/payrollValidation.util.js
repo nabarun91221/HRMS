@@ -1,4 +1,4 @@
-export function validatePayrollCreation(month, year)
+export default function validatePayrollCreation(month, year)
 {
 
     const payrollDate = new Date(year, month - 1, 1);
