@@ -41,14 +41,20 @@ class PayrollController
         const dbRevision = await SalaryRevision.findOne({
           employeeId,
           isActive: true,
-        })
-        throw new Error(`No active salary revision found, salary can't be generated before ${new Date(dbRevision.effectiveFrom)}`);
-      }
+        });
 
-      const { grossSalary, totalDeductions, netSalary } = calculateSalary(
-        revision.earnings,
-        revision.deductions,
-      );
+        if (!dbRevision) {
+          throw new Error("No salary revision exists for this employee.");
+        }
+
+        const formattedDate = dbRevision.effectiveFrom
+          .toISOString()
+          .split("T")[0];
+
+        throw new Error(
+          `Salary can't be generated before ${formattedDate}`
+        );
+      }
 
       const payroll = await Payroll.create(
         [
