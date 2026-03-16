@@ -41,7 +41,7 @@ class PayrollController
         const dbRevision = await SalaryRevision.findOne({
           employeeId,
           isActive: true,
-        });
+        }).populate("employeeId");
 
         if (!dbRevision) {
           throw new Error("No salary revision exists for this employee.");
@@ -52,7 +52,7 @@ class PayrollController
           .split("T")[0];
 
         throw new Error(
-          `Salary can't be generated before ${formattedDate}`
+          `Salary can't be generated for this employee (${dbRevision.employeeId.personalInfo.firstName} #${dbRevision.employeeId.employeeCode}) before ${formattedDate}, employee does't spend 1 month in the company yet`
         );
       }
 
