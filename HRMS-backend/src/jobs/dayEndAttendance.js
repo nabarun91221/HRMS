@@ -13,10 +13,18 @@ cron.schedule("0 0 * * *", async () =>
         yesterday.setDate(yesterday.getDate() - 1);
         yesterday.setHours(0, 0, 0, 0);
 
+        console.log("yesterday: ", yesterday);
+
         const endTime = new Date(yesterday);
         endTime.setHours(19, 0, 0, 0); // 7:00 PM auto clock-out
 
-        const employees = await Employee.find({ isActive: true });
+        console.log("endTime: ", endTime);
+
+        const employees = await Employee.find({ "employment.status": "ACTIVE" });
+        for (const employee of employees) {
+            console.log("Active Employees: ", employee.personalInfo.firstName, "-", employee.employeeCode);
+        }
+
 
         for (const emp of employees) {
 
@@ -24,6 +32,7 @@ cron.schedule("0 0 * * *", async () =>
                 employeeId: emp._id,
                 date: yesterday,
             });
+            console.log("employee id ", emp._id, " Attendance: ", attendance.status);
 
             //No Attendance → Check Leave
             if (!attendance) {
@@ -34,19 +43,22 @@ cron.schedule("0 0 * * *", async () =>
                     fromDate: { $lte: yesterday },
                     toDate: { $gte: yesterday },
                 });
+                console.log("is employee id ", emp._id, "on leave?: ", leave);
 
                 if (leave) {
-                    await Attendance.create({
+                    const att = await Attendance.create({
                         employeeId: emp._id,
                         date: yesterday,
                         status: "ON_LEAVE",
                     });
+                    console.log("if employee id ", emp._id, "on leave attendance : ", att);
                 } else {
-                    await Attendance.create({
+                    const att = await Attendance.create({
                         employeeId: emp._id,
                         date: yesterday,
                         status: "ABSENT",
                     });
+                    console.log("if employee id ", emp._id, "is not on leave attendance : ", att);
                 }
 
                 continue;
