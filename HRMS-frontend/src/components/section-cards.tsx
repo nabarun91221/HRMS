@@ -15,7 +15,7 @@ export function SectionCards({
           <CardHeader>
             <CardDescription>{card?.title}</CardDescription>
             <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-              {card?.value}
+              {Math.round(Number(card?.value))}
             </CardTitle>
           </CardHeader>
         </Card>
