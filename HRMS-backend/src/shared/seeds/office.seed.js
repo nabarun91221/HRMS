@@ -18,6 +18,14 @@ const seedOffice = async () =>
       },
       allowedRadius: 500, // meters
     });
+    await Office.create({
+      name: "Main Office - Kolkata",
+      location: {
+        type: "Point",
+        coordinates: [88.42704650512044, 22.575207270676653], // longitude, latitude
+      },
+      allowedRadius: 500, // meters
+    });
 
     console.log("Office seeded successfully");
     process.exit();

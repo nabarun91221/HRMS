@@ -90,6 +90,10 @@ const endpoints = {
     create: "leave-application",
   },
 
+  aiAgent: {
+    ask: "rag/ask",
+  },
+
   // successStory: {
   //   getAll: 'admin/success-stories',
   //   create: 'admin/success-stories',

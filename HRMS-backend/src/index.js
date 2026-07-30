@@ -14,6 +14,7 @@ import EmployeeRouter from "./modules/employees/routes/employee.route.js";
 import FileRouter from "./modules/file handle/routes/file.route.js";
 import LeaveRouter from "./modules/leave/routes/leave.route.js";
 import PayrollRouter from "./modules/payroles/routes/payrole.route.js";
+import RagRouter from "./modules/ai-agents/rag-agent/routes/rag.route.js";
 
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -43,7 +44,7 @@ nextApp.prepare().then(() =>
 
   App.use(
     cors({
-      origin: ["https://nmcarolina.co.in", "http://localhost:8000"],
+      origin: ["https://nmcarolina.co.in", "http://localhost:14547"],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       credentials: true,
     }),
@@ -64,6 +65,7 @@ nextApp.prepare().then(() =>
   App.use(baseUrl, AttendanceRouter);
   App.use(baseUrl, LeaveRouter);
   App.use(baseUrl, PayrollRouter);
+  App.use(baseUrl, RagRouter);
 
   // let Next handle all frontend routes
   App.use((req, res) =>

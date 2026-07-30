@@ -1,6 +1,7 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import AiAgentPopup from "@/modules/aiAgent/components/AiAgentPopup";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,6 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
+        <AiAgentPopup />
       </SidebarInset>
     </SidebarProvider>
   );
